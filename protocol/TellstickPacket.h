@@ -1,4 +1,6 @@
 
+#ifndef __TELLSTICK_PACKET_H__
+#define __TELLSTICK_PACKET_H__
 
 struct WireMessage
 {
@@ -15,3 +17,5 @@ class TellstickPacket
 	virtual unsigned int getWireDataSize() const = 0;
 	virtual unsigned int getTransmitionRepeats() const = 0;
 };
+
+#endif //__TELLSTICK_H__

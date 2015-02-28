@@ -35,13 +35,14 @@ void Tellstick::setLowFor(unsigned int ms_duration) const
 	delayMicroseconds(ms_duration);
 }
 
-void Tellstick::sendMessage(const TellstickPacket *packet) const {
+void Tellstick::sendMessage(const TellstickPacket &packet) const {
 	
-	const WireMessage *message = packet->getWireData();
-	const int transmition_repeats = packet->getTransmitionRepeats();
+	const WireMessage *message = packet.getWireData();
+    const int message_size = packet.getWireDataSize();
+	const int transmition_repeats = packet.getTransmitionRepeats();
 	
 	for (int i = 0; i < transmition_repeats; i++) {
-		for(int i = 0; i < packet->getWireDataSize(); i++) {
+		for(int i = 0; i < message_size; i++) {
 			setHighFor(message[i].ms_delay_high);
 			setLowFor(message[i].ms_delay_low);
 		}

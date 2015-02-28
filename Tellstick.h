@@ -31,7 +31,7 @@ public:
 	
 	void init();
 	
-	void sendMessage(const TellstickPacket *packet) const;
+	void sendMessage(const TellstickPacket &packet) const;
 	
 protected:
 private:
