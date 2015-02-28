@@ -20,17 +20,14 @@ class NexaLightSwitchPacket : public TellstickPacket
 {
   public:
 
-	NexaLightSwitchPacket();/* {
-        ook_msg = new WireMessage[30];
-    }*/
-	~NexaLightSwitchPacket();/* {
-        delete ook_msg;
-    }*/
+    NexaLightSwitchPacket();
+    ~NexaLightSwitchPacket();
+
     // TellstickPacket interface
-	void preparePacket();
-	const WireMessage *getWireData() const;
-	unsigned int getWireDataSize() const;
-	unsigned int getTransmitionRepeats() const;
+    void preparePacket();
+    const WireMessage *getWireData() const;
+    unsigned int getWireDataSize() const;
+    unsigned int getTransmitionRepeats() const;
 
     // NexaLightSwitchPacket interface
     void setHouse(unsigned int house);
@@ -48,7 +45,6 @@ class NexaLightSwitchPacket : public TellstickPacket
                     unsigned int data_width);
 
     WireMessage *ook_msg;
-
     unsigned int house;
     unsigned int unit;
     state_t state;

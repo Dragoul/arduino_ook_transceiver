@@ -21,7 +21,7 @@
 
 NexaLightSwitchPacket::NexaLightSwitchPacket()
 {
-	ook_msg = new WireMessage[NEXA_LIGHT_SWITCH_MESSAGE_SIZE];
+    ook_msg = new WireMessage[NEXA_LIGHT_SWITCH_MESSAGE_SIZE];
     house = 0;
     unit = 0;
     state = LIGHT_OFF;
@@ -29,7 +29,7 @@ NexaLightSwitchPacket::NexaLightSwitchPacket()
 
 NexaLightSwitchPacket::~NexaLightSwitchPacket()
 {
-	delete ook_msg;
+    delete ook_msg;
 }
 
 void NexaLightSwitchPacket::setBit(WireMessage *ook_msg, unsigned int ms_high, unsigned int ms_low)
@@ -53,7 +53,7 @@ void NexaLightSwitchPacket::appendData(WireMessage *ook_msg, unsigned int *msg_i
 
 void NexaLightSwitchPacket::preparePacket()
 {
-	unsigned int msg_index = 0;
+    unsigned int msg_index = 0;
 
     appendData(ook_msg, &msg_index, house, HOUSE_BIT_WIDTH);
     appendData(ook_msg, &msg_index, unit, UNIT_BIT_WIDTH);
@@ -68,17 +68,17 @@ void NexaLightSwitchPacket::preparePacket()
 
 const WireMessage *NexaLightSwitchPacket::getWireData() const
 {
-	return ook_msg;
+    return ook_msg;
 }
 
 unsigned int NexaLightSwitchPacket::getWireDataSize() const
 {
-	return NEXA_LIGHT_SWITCH_MESSAGE_SIZE;
+    return NEXA_LIGHT_SWITCH_MESSAGE_SIZE;
 }
 
 unsigned int NexaLightSwitchPacket::getTransmitionRepeats() const
 {
-	return 3;
+    return 3;
 }
 
 //////////////////////////////////////////////////////////////////////////
