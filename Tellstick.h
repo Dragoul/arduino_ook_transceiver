@@ -38,8 +38,8 @@ private:
 	Tellstick( const Tellstick &c );
 	Tellstick& operator=( const Tellstick &c);
 	
-	void setHighFor(unsigned int ms_duration) const;
-	void setLowFor(unsigned int ms_duration) const;
+	void setHighFor(uint16_t ms_duration) const;
+	void setLowFor(uint16_t ms_duration) const;
 	
 	byte pin_data;
 }; //Tellstick

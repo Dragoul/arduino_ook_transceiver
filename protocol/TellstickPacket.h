@@ -2,10 +2,12 @@
 #ifndef __TELLSTICK_PACKET_H__
 #define __TELLSTICK_PACKET_H__
 
+#include <stdint.h>
+
 struct WireMessage
 {
-    int ms_delay_high;
-    int ms_delay_low;
+    uint16_t ms_delay_high;
+    uint16_t ms_delay_low;
 };
 
 class TellstickPacket
@@ -14,8 +16,8 @@ class TellstickPacket
     virtual ~TellstickPacket() {}
     virtual void preparePacket() = 0;
     virtual const WireMessage *getWireData() const = 0;
-    virtual unsigned int getWireDataSize() const = 0;
-    virtual unsigned int getTransmitionRepeats() const = 0;
+    virtual uint16_t getWireDataSize() const = 0;
+    virtual uint8_t getTransmitionRepeats() const = 0;
 };
 
 #endif //__TELLSTICK_H__

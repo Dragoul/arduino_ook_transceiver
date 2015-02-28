@@ -26,27 +26,28 @@ class NexaLightSwitchPacket : public TellstickPacket
     // TellstickPacket interface
     void preparePacket();
     const WireMessage *getWireData() const;
-    unsigned int getWireDataSize() const;
-    unsigned int getTransmitionRepeats() const;
+    uint16_t getWireDataSize() const;
+    uint8_t getTransmitionRepeats() const;
+
 
     // NexaLightSwitchPacket interface
-    void setHouse(unsigned int house);
-    void setUnit(unsigned int unit);
+    void setHouse(uint8_t house);
+    void setUnit(uint8_t unit);
     void setLightState(state_t state);
 
   private:
     void setBit(WireMessage *ook_msg,
-                unsigned int ms_high,
-                unsigned int ms_low);
+                uint16_t ms_high,
+                uint16_t ms_low);
 
     void appendData(WireMessage *ook_msg,
-                    unsigned int *msg_index,
-                    unsigned int data,
-                    unsigned int data_width);
+                    uint16_t *msg_index,
+                    uint16_t data,
+                    uint8_t data_width);
 
     WireMessage *ook_msg;
-    unsigned int house;
-    unsigned int unit;
+    uint8_t house;
+    uint8_t unit;
     state_t state;
 };
 
