@@ -39,7 +39,7 @@ class NexaLightSwitchPacket : public TellstickPacket
 				
 				ook_msg[msg_index].ms_delay_high = T*times;
 				ook_msg[msg_index++].ms_delay_low = T;
-			} else if(message[i] == 'X') {
+			} else if(message[i] == '1') {
 				ook_msg[msg_index].ms_delay_high = T*times;
 				ook_msg[msg_index++].ms_delay_low = T;
 			

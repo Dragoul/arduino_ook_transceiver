@@ -7,7 +7,7 @@
 
 
 #include "Tellstick.h"
-#include "TellstickPacket.h"
+#include "protocol/TellstickPacket.h"
 
 // default constructor
 Tellstick::Tellstick(byte pin_data)
