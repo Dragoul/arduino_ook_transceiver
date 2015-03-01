@@ -1,6 +1,6 @@
 // DHT11 lib: http://playground.arduino.cc/Main/DHT11Lib
 #include <dht11.h>
-#include <Tellstick.h>
+#include <OokTransceiver.h>
 #include <FineOffsetSensorPacket.h>
 
 // Pins
@@ -13,7 +13,7 @@ const int transmit_delay_seconds = 60;
 
 // Global variables
 dht11 DHT11;
-Tellstick tellstick(transmit_pin);
+OokTransceiver ookTransceiver(transmit_pin);
 FineOffsetSensorPacket sensor(device_id);
 
 // Helper functions
@@ -22,7 +22,7 @@ void transmit_sensor_data() {
   sensor.setTemperature((int16_t)DHT11.temperature);
   sensor.preparePacket();
   Serial.println("Transmitting message: " + sensor.packetToString());
-  tellstick.sendMessage(sensor);
+  ookTransceiver.sendMessage(sensor);
 }
 
 void print_error_code(int error_code) {

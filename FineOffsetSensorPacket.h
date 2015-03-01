@@ -16,16 +16,16 @@
 #ifndef __FINE_OFFSET_SENSOR_PACKET_H__
 #define __FINE_OFFSET_SENSOR_PACKET_H__
 
-#include "protocol/TellstickPacket.h"
+#include "protocol/OokTransceiverPacket.h"
 
-class FineOffsetSensorPacket : public TellstickPacket
+class FineOffsetSensorPacket : public OokTransceiverPacket
 {
   public:
     FineOffsetSensorPacket();
     FineOffsetSensorPacket(uint8_t device_id);
     ~FineOffsetSensorPacket();
 
-    // TellstickPacket interface
+    // OokTransceiverPacket interface
     void preparePacket();
     const WireMessage *getWireData() const;
     uint16_t getWireDataSize() const;

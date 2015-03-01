@@ -32,7 +32,7 @@ FineOffsetSensorPacket::~FineOffsetSensorPacket() {
     delete ook_msg;
 }
 
-// TellstickPacket interface
+// OokTransceiverPacket interface
 void FineOffsetSensorPacket::preparePacket() {
     uint8_t *message = new uint8_t[message_size_bytes];
     prepareMessageData(message);
@@ -73,7 +73,7 @@ void FineOffsetSensorPacket::setTemperature(const int16_t value) {
 String FineOffsetSensorPacket::packetToString() const {
     String packet = "";
     for (uint8_t i = 0; i < message_size_bits; i++) {
-        if (ook_msg[i].ms_delay_high == time_one_us) {
+        if (ook_msg[i].us_delay_high == time_one_us) {
             packet += "1";
         } else {
             packet += "0";
@@ -88,13 +88,13 @@ const {
 }
 
 void FineOffsetSensorPacket::setOne(WireMessage *bit) {
-    bit->ms_delay_high = time_one_us;
-    bit->ms_delay_low = time_delay_us;
+    bit->us_delay_high = time_one_us;
+    bit->us_delay_low = time_delay_us;
 }
 
 void FineOffsetSensorPacket::setZero(WireMessage *bit) {
-    bit->ms_delay_high = time_zero_us;
-    bit->ms_delay_low = time_delay_us;
+    bit->us_delay_high = time_zero_us;
+    bit->us_delay_low = time_delay_us;
 }
 
 void FineOffsetSensorPacket::prepareMessageData(uint8_t *message) const {

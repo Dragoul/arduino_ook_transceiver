@@ -9,21 +9,21 @@
 #ifndef __NEXA_LIGHT_SWITCH_PACKET_H__
 #define __NEXA_LIGHT_SWITCH_PACKET_H__
 
-#include "protocol/TellstickPacket.h"
+#include "protocol/OokTransceiverPacket.h"
 
 typedef enum {
     LIGHT_ON,
     LIGHT_OFF
 } state_t;
 
-class NexaLightSwitchPacket : public TellstickPacket
+class NexaLightSwitchPacket : public OokTransceiverPacket
 {
   public:
 
     NexaLightSwitchPacket();
     ~NexaLightSwitchPacket();
 
-    // TellstickPacket interface
+    // OokTransceiverPacket interface
     void preparePacket();
     const WireMessage *getWireData() const;
     uint16_t getWireDataSize() const;
@@ -37,8 +37,8 @@ class NexaLightSwitchPacket : public TellstickPacket
 
   private:
     void setBit(WireMessage *ook_msg,
-                uint16_t ms_high,
-                uint16_t ms_low);
+                uint16_t us_high,
+                uint16_t us_low);
 
     void appendData(WireMessage *ook_msg,
                     uint16_t *msg_index,

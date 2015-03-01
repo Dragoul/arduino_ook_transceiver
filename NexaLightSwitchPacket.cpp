@@ -34,11 +34,11 @@ NexaLightSwitchPacket::~NexaLightSwitchPacket()
 
 void NexaLightSwitchPacket::setBit(
         WireMessage *ook_msg,
-        uint16_t ms_high,
-        uint16_t ms_low)
+        uint16_t us_high,
+        uint16_t us_low)
 {
-    ook_msg->ms_delay_high = ms_high;
-    ook_msg->ms_delay_low = ms_low;
+    ook_msg->us_delay_high = us_high;
+    ook_msg->us_delay_low = us_low;
 }
 
 void NexaLightSwitchPacket::appendData(
@@ -85,7 +85,7 @@ uint16_t NexaLightSwitchPacket::getWireDataSize() const
 
 uint8_t NexaLightSwitchPacket::getTransmissionRepeats() const
 {
-    return 3;
+    return 8;
 }
 
 //////////////////////////////////////////////////////////////////////////
