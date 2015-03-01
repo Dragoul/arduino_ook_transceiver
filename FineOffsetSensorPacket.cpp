@@ -97,7 +97,7 @@ void FineOffsetSensorPacket::setZero(WireMessage *bit) {
     bit->ms_delay_low = time_delay_us;
 }
 
-void FineOffsetSensorPacket::prepareMessageData(uint8_t *message) {
+void FineOffsetSensorPacket::prepareMessageData(uint8_t *message) const {
     /* Message consists of 6 bytes
      * 8-bit preamble (all 1:s)
      * 12-bit device id and type, (four 0:s, eight bit device id)

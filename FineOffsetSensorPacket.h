@@ -50,7 +50,7 @@ class FineOffsetSensorPacket : public TellstickPacket
     void setOne(WireMessage *bit);
     void setZero(WireMessage *bit);
 
-    void prepareMessageData(uint8_t *message);
+    void prepareMessageData(uint8_t *message) const;
     void prepareWireMessage(const uint8_t *message);
 
     uint8_t calculateCRC8(const uint8_t *msg, const uint8_t len) const;
