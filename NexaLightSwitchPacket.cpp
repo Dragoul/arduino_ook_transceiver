@@ -83,7 +83,7 @@ uint16_t NexaLightSwitchPacket::getWireDataSize() const
     return NEXA_LIGHT_SWITCH_MESSAGE_SIZE;
 }
 
-uint8_t NexaLightSwitchPacket::getTransmitionRepeats() const
+uint8_t NexaLightSwitchPacket::getTransmissionRepeats() const
 {
     return 3;
 }

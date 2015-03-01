@@ -17,7 +17,7 @@ class TellstickPacket
     virtual void preparePacket() = 0;
     virtual const WireMessage *getWireData() const = 0;
     virtual uint16_t getWireDataSize() const = 0;
-    virtual uint8_t getTransmitionRepeats() const = 0;
+    virtual uint8_t getTransmissionRepeats() const = 0;
 };
 
 #endif //__TELLSTICK_H__
