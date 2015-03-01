@@ -30,9 +30,9 @@ void Tellstick::sendMessage(const TellstickPacket &packet) const {
 
     const WireMessage *message = packet.getWireData();
     const uint16_t message_size = packet.getWireDataSize();
-    const uint8_t transmition_repeats = packet.getTransmitionRepeats();
+    const uint8_t transmission_repeats = packet.getTransmissionRepeats();
 
-    for (uint8_t i = 0; i < transmition_repeats; i++) {
+    for (uint8_t i = 0; i < transmission_repeats; i++) {
         for(uint16_t i = 0; i < message_size; i++) {
             setHighFor(message[i].ms_delay_high);
             setLowFor(message[i].ms_delay_low);

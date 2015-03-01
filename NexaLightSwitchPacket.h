@@ -27,7 +27,7 @@ class NexaLightSwitchPacket : public TellstickPacket
     void preparePacket();
     const WireMessage *getWireData() const;
     uint16_t getWireDataSize() const;
-    uint8_t getTransmitionRepeats() const;
+    uint8_t getTransmissionRepeats() const;
 
 
     // NexaLightSwitchPacket interface
